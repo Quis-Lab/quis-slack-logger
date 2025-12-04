@@ -2,26 +2,27 @@
 
 A Python library for centralized error logging to Slack via Incoming Webhooks. Perfect for multi-service architectures where you want all errors logged to a single Slack channel.
 
-## Quick Start (GitHub Teams)
+## Quick Start
+
+Add to your project's `requirements.txt`:
+
+```txt
+git+https://github.com/Quis-Lab/quis-slack-logger.git@v1.0.0
+```
+
+Install:
 
 ```bash
-# 1. Push this package to GitHub (already done!)
-# Repository: https://github.com/Quis-Lab/quis-slack-logger
-
-# 2. In your other project's requirements.txt:
-#    git+https://github.com/Quis-Lab/quis-slack-logger.git@v1.0.0
-
-# 3. Install and use
 pip install -r requirements.txt
 ```
+
+Use in your code:
 
 ```python
 from slack_logger import SlackLogger
 logger = SlackLogger(service_name="my-service")
 logger.error("Something went wrong", exception=e)
 ```
-
-📖 **Full team setup guide: [TEAM_SETUP.md](TEAM_SETUP.md)**
 
 ## Features
 
@@ -36,109 +37,19 @@ logger.error("Something went wrong", exception=e)
 
 ## Installation
 
-### For GitHub Teams (Recommended)
-
-If your projects are on GitHub and you're working with a team:
-
-1. **Push this package to GitHub** (see [TEAM_SETUP.md](TEAM_SETUP.md) for details)
-2. **Add to your project's `requirements.txt`**:
-   ```txt
-   git+https://github.com/yourusername/quis-slack-logger.git@v1.0.0
-   ```
-3. **Install**: `pip install -r requirements.txt`
-
-Team members will automatically get the package when they install dependencies!
-
-See [TEAM_SETUP.md](TEAM_SETUP.md) for complete team collaboration guide.
-
----
-
-### Option 1: Install from Local Directory (Development)
-
-If you have the package locally and want to use it in other projects:
-
-```bash
-# Navigate to the package directory
-cd /path/to/Quis-Slack-Logger
-
-# Install in editable mode (changes reflect immediately)
-pip install -e .
-
-# Or install normally
-pip install .
-```
-
-### Option 2: Install from Git Repository
-
-If the package is in a Git repository:
-
-```bash
-# Install directly from Git
-pip install git+https://github.com/yourusername/quis-slack-logger.git
-
-# Or for a specific branch/tag
-pip install git+https://github.com/yourusername/quis-slack-logger.git@main
-```
-
-### Option 3: Install from Local Path in Other Projects
-
-In your other project, you can install it directly from the local path:
-
-```bash
-# From your other project directory
-pip install /path/to/Quis-Slack-Logger
-
-# Or use relative path
-pip install ../Quis-Slack-Logger
-```
-
-### Option 4: Add to requirements.txt in Other Projects
-
-Add this line to your other project's `requirements.txt`:
+Add this line to your project's `requirements.txt`:
 
 ```txt
-# For local development
--e /path/to/Quis-Slack-Logger
-
-# Or from Git
-git+https://github.com/yourusername/quis-slack-logger.git
-
-# Or if published to PyPI (see Publishing section below)
-slack-error-logger>=1.0.0
+git+https://github.com/Quis-Lab/quis-slack-logger.git@v1.0.0
 ```
 
-### Option 5: Build and Install Distribution Package
-
-Build a distribution package and install it:
+Then install:
 
 ```bash
-# Build the package
-cd /path/to/Quis-Slack-Logger
-pip install build
-python -m build
-
-# This creates dist/slack_error_logger-1.0.0.tar.gz
-# Install it in other projects:
-pip install dist/slack_error_logger-1.0.0.tar.gz
+pip install -r requirements.txt
 ```
 
-### Publishing to PyPI (Optional)
-
-If you want to publish to PyPI for easy installation:
-
-```bash
-# Install build and twine
-pip install build twine
-
-# Build the package
-python -m build
-
-# Upload to PyPI (requires PyPI account)
-twine upload dist/*
-
-# Then others can install with:
-pip install slack-error-logger
-```
+That's it! The package will be automatically installed from GitHub when you or your team members run `pip install -r requirements.txt`.
 
 ## Setup
 
@@ -172,55 +83,6 @@ export SLACK_LOGGER_RETRY_DELAY=1
 
 Pass configuration directly when initializing the logger.
 
-## Using in Other Projects
-
-### Quick Setup for GitHub Teams
-
-1. **Push this package to GitHub**:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git remote add origin https://github.com/yourusername/quis-slack-logger.git
-   git push -u origin main
-   git tag -a v1.0.0 -m "Release v1.0.0"
-   git push origin v1.0.0
-   ```
-
-2. **In your other project's `requirements.txt`**:
-   ```txt
-   git+https://github.com/yourusername/quis-slack-logger.git@v1.0.0
-   ```
-
-3. **Install and use**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-   ```python
-   from slack_logger import SlackLogger
-   logger = SlackLogger(service_name="my-service")
-   logger.error("Something went wrong", exception=e)
-   ```
-
-**That's it!** Team members just need to run `pip install -r requirements.txt` and they'll get the package automatically.
-
-📖 **See [TEAM_SETUP.md](TEAM_SETUP.md) for complete team collaboration guide.**
-
-### Adding to Your Project's requirements.txt
-
-```txt
-# For GitHub teams (recommended)
-git+https://github.com/yourusername/quis-slack-logger.git@v1.0.0
-
-# Or use latest from main branch
-git+https://github.com/yourusername/quis-slack-logger.git@main
-
-# For local development
--e /absolute/path/to/Quis-Slack-Logger
-
-# If published to PyPI
-slack-error-logger>=1.0.0
-```
 
 ## Usage
 
