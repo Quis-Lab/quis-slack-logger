@@ -1,12 +1,11 @@
 # Example requirements.txt for projects using this Slack Logger
-# Copy this to your other projects and update the GitHub URL
+# Copy this to your other projects
 
 # Slack Error Logger - Install from GitHub
-# Replace 'yourusername' and 'quis-slack-logger' with your actual GitHub username and repo name
-git+https://github.com/yourusername/quis-slack-logger.git@v1.0.0
+git+https://github.com/Quis-Lab/quis-slack-logger.git@v1.0.0
 
 # Or use latest from main branch (for development)
-# git+https://github.com/yourusername/quis-slack-logger.git@main
+# git+https://github.com/Quis-Lab/quis-slack-logger.git@main
 
 # Other dependencies for your project
 # Flask==2.3.0
