@@ -1,0 +1,42 @@
+# Example GitHub Actions workflow for the Slack Logger package
+# Rename to ci.yml to enable
+
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  tags:
+    - 'v*'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.7', '3.8', '3.9', '3.10', '3.11']
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-cov
+    
+    - name: Run tests (if you add tests)
+      run: |
+        pytest --cov=slack_logger --cov-report=xml || true
+    
+    - name: Check package can be installed
+      run: |
+        pip install -e .
+
