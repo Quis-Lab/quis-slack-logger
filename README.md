@@ -5,13 +5,11 @@ A Python library for centralized error logging to Slack via Incoming Webhooks. P
 ## Quick Start (GitHub Teams)
 
 ```bash
-# 1. Push this package to GitHub
-git init && git add . && git commit -m "Initial commit"
-git remote add origin https://github.com/yourusername/quis-slack-logger.git
-git push -u origin main
+# 1. Push this package to GitHub (already done!)
+# Repository: https://github.com/Quis-Lab/quis-slack-logger
 
 # 2. In your other project's requirements.txt:
-#    git+https://github.com/yourusername/quis-slack-logger.git@v1.0.0
+#    git+https://github.com/Quis-Lab/quis-slack-logger.git@v1.0.0
 
 # 3. Install and use
 pip install -r requirements.txt
